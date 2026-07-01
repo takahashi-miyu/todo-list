@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo-list</title>
+</head>
+
+<body>
+    <h2>ToDo-list管理システム</h2>
+    <h1>Array.do</h1>
+
+    <div>
+        <span>
+            <input type="text" id="taskInput" placeholder="タスクを入力してください">
+        </span>
+        <input type="button" value="↓" onclick="addTask()">
+    </div>
+
+    <div>
+        <div>
+            <ul class="task-list" id="task-list">
+                <li class="task-item" id="task-item">
+                    <input type="checkbox" id="item" onclick="toggleSelectAll()">
+                    <label for="item">追加したタスク</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
