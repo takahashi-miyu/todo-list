@@ -4,32 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
     <title>ToDo-list</title>
 </head>
 
 <body>
-    <h2>ToDo-list管理システム</h2>
-    <h1>Array.do</h1>
+    <div class="container">
+        <h2>ToDo管理システム</h2>
+        <!-- <h1>Array.do</h1> -->
 
-    <div>
-        <span>
-            <input type="text" id="taskInput" placeholder="タスクを入力してください">
-        </span>
-        <input type="button" value="↓" onclick="addTask()">
-    </div>
+        <div class="task-input">
+            <input class="task-input__container" type="text" id="task-input" placeholder="タスクを入力してください" value="">
+            <input class="task-input__button" type="button" id="task-button" value="↓" onclick="addTask()">
+        </div>
 
-    <div>
-        <div>
-            <ul class="task-list" id="task-list">
-                <li class="task-item" id="task-item">
-                    <input type="checkbox" id="item" onclick="toggleSelectAll()">
-                    <label for="item">追加したタスク-1</label>
-                </li>
-            </ul>
+        <div class="task-select">
+            <h3>タスク一覧</h3>
+            <!-- <div class="task-select__container"> -->
+                <ul class="task-list" id="task-list">
+                    <!-- <li class="task-item" id="task-item" style="display: none;">
+                        <input type="checkbox" id="item" onclick="toggleSelectAll()">
+                        <label id="item-label" for="item" value=""></label>
+                        <input type="button" id="item" value="🗑️" onclick="toggleTask()">
+                    </li> -->
+                </ul>
+            <!-- </div> -->
         </div>
     </div>
-
 </body>
 
 </html>
