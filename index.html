@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js"></script>
     <title>ToDo-list</title>
 </head>
 
@@ -17,7 +16,7 @@
 
         <div class="task-input">
             <input class="task-input__container" type="text" id="task-input" placeholder="タスクを入力してください" value="">
-            <input class="task-input__button" type="button" id="task-button" value="↓" onclick="addTask()">
+            <input class="task-input__button" type="button" id="task-button" value="↓">
         </div>
 
         <div class="task-select">
@@ -32,7 +31,19 @@
                 </ul>
             <!-- </div> -->
         </div>
+
+        <!-- <div class="task-done">
+            <h3>完了済タスク</h3>
+            <ul class="task-done-list" id="task-done-list">
+                <li class="task-done-item" id="task-done-item" style="display: none;">
+                    <input type="checkbox" id="done-item" onclick="toggleSelectAll()">
+                    <label id="done-item-label" for="done-item" value=""></label>
+                    <input type="button" id="done-item" value="🗑️" onclick="toggleTask()">
+                </li>
+            </ul>
+        </div> -->
     </div>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

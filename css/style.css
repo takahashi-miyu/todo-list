@@ -52,11 +52,13 @@ body {
         font-weight: bold;
     }
 
-    .task-select {
+    .task-select,
+    .task-done {
         height: auto;
         border-radius: 5px;
         border: 1px solid #ccc;
         padding-inline: 15px;
+        margin-bottom: 50px;
     }
 
     .task-list {
