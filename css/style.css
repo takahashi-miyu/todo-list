@@ -73,12 +73,20 @@ body {
         width: 100%;
     }
 
-    .task-item label {
+    .true,
+    .false {
         font-size: 16px;
         line-height: 15px;
-        background-color: #dbdbdb;
         padding: 10px;
         border-radius: 5px;
+    }
+
+    .true {
+        background-color: #e6a7a7;
+    }
+
+    .false {
+        background-color: #aed1ff;
     }
 
     .task-item input[type="button"] {
