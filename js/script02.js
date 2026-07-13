@@ -11,7 +11,7 @@ function createTodo() {
 
     // savedTasks配列を、li要素の配列に変換する
     const taskItems = savedTasks.map((todo) => {
-        // 分割代入 todo.id / todo.num を取り出している
+        // 分割代入 todo.text / todo.num / todo.parity を取り出している
         const { text, num, parity } = todo;
 
         const li = document.createElement('li');
@@ -53,14 +53,13 @@ function addTask() {
         };
 
         // saveTasks配列の最後に新しいタスクを追加する
-        // savedTasks.push(newTask);
         savedTasks = [...savedTasks, newTask];
 
-        saveTodo();
+        saveTodo(); // ローカルストレージに保存
         createTodo(); // タスクを表示する処理を実行
         taskInput.value = ''; // 入力欄をクリア
 
-        alert('タスクが保存されました: ' + taskValue); // 保存完了のアラート
+        // alert('タスクが保存されました: ' + taskValue); // 保存完了のアラート
     }
 }
 
@@ -78,20 +77,18 @@ function saveTodo() {
     localStorage.setItem('tasks', JSON.stringify(savedTasks));
 }
 
+// 削除ボタンがクリックされたときの処理
 function deleteTasks(t, n) {
-    // alert(t + '削除しました');
-
-    // const index = savedTasks.findIndex(todo => todo.num === n);
-    // console.log(index);
-
-    // if (index !== -1) {
-    //     savedTasks.splice(index, 1); // タスクからindexの1つ削除(配列から削除)
-    // }
+    // 該当タスクを削除し、それ以降のタスク番号を1ずつ繰り上げる
     savedTasks = savedTasks.filter((todo) => todo.num !== n).map((todo) => {
+        // 削除されたnより後ろのタスクの場合（nより大きい場合）
         if (todo.num > n) {
-            const reNun = todo.num - 1;
-            return { ...todo, num: reNun, parity: parityCheck(reNun)}
+            // タスクの番号を1ずつ減らす
+            const reNun = todo.num - 1; // 番号を1ずつ減らす
+            // タスク情報をコピーし、新しい番号とそれに応じた奇数・偶数フラグで上書きして返す
+            return { ...todo, num: reNun, parity: parityCheck(reNun) }
         }
+        // 削除された番号より前のタスクはそのまま残す
         return todo
     })
 
