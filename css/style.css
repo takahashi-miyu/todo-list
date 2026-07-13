@@ -61,7 +61,8 @@ body {
         margin-bottom: 50px;
     }
 
-    .task-list {
+    .task-list,
+    .completed-list {
         list-style-type: none;
         padding: 0;
     }
@@ -71,6 +72,9 @@ body {
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        height: 45px;
+        margin: 0 0 10px;
+        background-color: whitesmoke;
     }
 
     .true,
@@ -82,18 +86,33 @@ body {
     }
 
     .true {
-        background-color: #e6a7a7;
+        /* background-color: #e6a7a7; */
+        color: #e6a7a7;
     }
 
     .false {
-        background-color: #aed1ff;
+        /* background-color: #aed1ff; */
+        color: #aed1ff;
     }
 
-    .task-item input[type="button"] {
-        width: 35px;
-        height: 35px;
+    .button-area {
+        display: inline-flex;
+        gap: 5px;
+    }
+
+    .delete-button,
+    .complete-button {
+        width: auto;
+        height: 30px;
         border: none;
-        background-color: #bebef8;
         border-radius: 5px;
+    }
+
+    .delete-button {
+        background-color: #bebef8;
+    }
+
+    .complete-button {
+        background-color: #ffcbad;
     }
 }
